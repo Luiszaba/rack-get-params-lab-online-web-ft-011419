@@ -26,7 +26,14 @@ end
       search_term = req.params["q"]
       resp.write handle_search(search_term)
     else
-      
+          elsif req.path.match(/add/)
+        added= req.params["item"]
+    if @@items.include? added
+        @@cart  <<  added
+        resp.write  "added #{added}"
+      else
+        resp.write "We don't have that item"
+      end
       resp.write "Path Not Found"
     end
 
