@@ -20,6 +20,8 @@ class Application
         req.write "#{c}\n"
     end
   end 
+end
+
     def req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
