@@ -21,6 +21,12 @@ class Application
 
     resp.finish
   end
+  
+  def cart
+    req.path.match(/cart/)
+    @@cart.each do |c|
+      
+      
 
   def handle_search(search_term)
     if @@items.include?(search_term)
