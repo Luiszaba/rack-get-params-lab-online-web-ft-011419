@@ -24,7 +24,8 @@ class Application
   
   def cart
     req.path.match(/cart/)
-    @@cart.each do |c|
+    if @@cart.empty?
+      resp.write ""
       
       
 
