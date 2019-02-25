@@ -26,16 +26,6 @@ class Application
 
     resp.finish
   end
-  
-  def cart
-    req.path.match(/cart/)
-    if @@cart.empty?
-      resp.write "Your cart is empty"
-    else
-      resp.write "#{items}\n"
-  end
-  
-      
       
 
   def handle_search(search_term)
